@@ -1,0 +1,629 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Form</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+            width: 100%;
+            height: 100%;
+        }
+
+        fieldset {
+            border: 1px solid black;
+            margin-left: -2px;
+            border-radius: 5px;
+            padding-left: 20px;
+            width: 100%;
+            border-color: black;
+            margin-top: 5vh;
+        }
+
+        legend {
+            border-color: #b65fc3e4;
+            border-radius: 5px;
+            padding: 2px 15px;
+            border: 1px solid black;
+            width: auto;
+            margin-top: -2%;
+            float: initial;
+            font-size: 15px;
+            font-weight: 600;
+            color: #007bff;
+        }
+
+        .container {
+            width: 100vw;
+            height: auto;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .box {
+            width: 60vw;
+            margin-top: 5vh;
+            height: auto;
+            padding: 2vw 2vh 2vw;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-top: 2px solid #007bff;
+            border-left: 2px solid #007bff;
+            border-right: 2px solid #007bff;
+            border-bottom: 2px solid #007bff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .heading {
+            display: flex;
+            padding: 1%;
+            justify-content: center;
+            font-variant: inherit;
+            border-bottom: 2px solid #007bff;
+            background-color: #f8f9fa;
+            color: #007bff;
+        }
+
+        .from {
+            width: 60vw;
+            height: auto;
+            margin: 1vw;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 500;
+            font-size: medium;
+            color: #333333;
+            font-weight: 600;
+        }
+
+        .input {
+            margin-top: 1vh;
+            border-radius: 5px;
+            gap: 2vw;
+            font-weight: 600;
+            width: 100%;
+            height: 5vh;
+            border: 2px solid #007bff;
+            background-color: #ffffff;
+            color: #333333;
+            padding: 0 10px;
+        }
+
+            .input:focus {
+                border-color: #0056b3;
+                outline: none;
+                box-shadow: 0 0 5px #0056b3;
+                background-color: #e9f5ff;
+            }
+
+            .input::placeholder {
+                color: #666666;
+                font-size: 0.75rem;
+                opacity: 1;
+            }
+
+        .row {
+            width: 58vw;
+            height: auto;
+            margin-top: 2vh;
+            gap: 2vw;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .left,
+        .right {
+            flex-direction: row;
+            width: 40vw;
+        }
+
+        input {
+            margin-top: 2vh;
+        }
+
+        .btn {
+            margin-top: 1vh;
+            background-color: #0ca020;
+            border: 1px solid #0ca020;
+            border-radius: 5px;
+            padding: 1.5vh 2.5vw;
+            font-weight: 600;
+            color: #ffffff;
+            cursor: pointer;
+            &:hover
+
+        {
+            background-color: #288034;
+            transition: ease-in-out 0.2s;
+            color: #ffffff;
+        }
+
+        }
+
+        .btn1 {
+            margin-top: 1vh;
+            background-color: #dc3545;
+            border: 1px solid #dc3545;
+            border-radius: 5px;
+            padding: 1.5vh 2.5vw;
+            font-weight: 600;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+            .btn1:hover {
+                background-color: #c82333;
+                transition: ease-in-out 0.2s;
+                color: #ffffff;
+            }
+
+        .row1 {
+            width: 60vw;
+            height: auto;
+            gap: 2vw;
+            margin-top: 2vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left1 {
+            flex-direction: row;
+            width: 58vw;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+            textarea::placeholder {
+                color: #666666;
+                font-size: 0.75rem;
+                opacity: 1;
+            }
+
+        @media (max-width: 600px) {
+
+            .from,
+            .row,
+            .row1,
+            .left,
+            .right,
+            .left1 {
+                width: 90vw;
+            }
+
+            .container {
+                width: 100vw;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+            }
+
+            .box {
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+            }
+
+            .from {
+                width: 90vw;
+            }
+
+            .row {
+                flex-direction: column;
+            }
+
+            .left,
+            .right {
+                width: 100%;
+            }
+
+            .input {
+                width: 100%;
+            }
+
+            .heading h1 {
+                font-size: 1.5rem;
+            }
+
+            .btn,
+            .btn1 {
+                width: 100%;
+                padding: 1.5vh 0;
+            }
+        }
+
+        .container1 {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            overflow-y: auto;
+            background-color: antiquewhite;
+        }
+
+        .table-box {
+            margin-top: 5vh;
+            width: 90%;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 900px;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th {
+            width: auto;
+            padding: 12px;
+            border: 1px solid #dee2e6;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 12px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+            background-color: #f8f9fa;
+            color: #495057;
+            transition: background-color 0.3s ease;
+            &:hover
+
+        {
+            background-color: #a9cbec;
+        }
+
+        }
+
+        td .button1 {
+            padding: 1vh 1.5vw;
+            margin: 1vh;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            &:hover
+
+        {
+            background-color: #218838;
+        }
+
+        }
+
+        td .button2 {
+            padding: 1vh 1.5vw;
+            margin: 1vh;
+            background-color: #ff1e00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            &:hover
+
+        {
+            background-color: #eb4646;
+        }
+
+        }
+
+        @media (max-width: 600px) {
+            .container1 {
+                width: 100%;
+                padding: 0 10px;
+            }
+
+            th, td {
+                padding: 8px;
+                font-size: 14px;
+            }
+
+                td button {
+                    padding: 0.4vh 0.9vw;
+                    margin: 0.5vh;
+                    font-size: 12px;
+                }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <fieldset
+      <div class="box">
+        <div class="heading">
+          <h1>Simple Form</h1>
+        </div>
+
+        <fieldset>
+            <legend>Student From</legend>
+            <form action="#" >
+                <div class="from">
+                    <div class="row">
+                        <div class="left">
+                <label>First Name </label> <br />
+                <input type="text" class="input" placeholder="First Name" />
+              </div>
+              <div class="right">
+                <label>Last Name </label> <br />
+                <input type="text" class="input" placeholder="Last Name" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="left">
+                <label>Father Name </label> <br />
+                <input class="input" class="input" type="text" placeholder="Father Name" />
+            </div>
+            <div class="right">
+                <label>Mother Name </label> <br />
+                <input type="text"  class="input" placeholder="Mother Name" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="left">
+                <label>Date of Birth</label> <br />
+                <input class="input" type="date"/>
+            </div>
+            <div class="right">
+                <label>Age</label> <br />
+                <input type="tel" class="input" maxlength="2" placeholder="Enter Age" />
+            </div>
+              </div>
+
+              <div class="row">
+                  <div class="left">
+                      <label>Email</label> <br />
+                      <input type="email" class="input" maxlength="24" placeholder="example@gmail.com"/>
+                    </div>
+                    <div class="right">
+                        <label>Mobile Number</label> <br />
+                  <input class="input" type="tel" maxlength="10" placeholder="Enter 10 Digit" />
+                </div>
+              </div>
+
+              <div class="row">
+                  <div class="left">
+                      <label>State</label> <br />
+                      <select class="input">
+                          <option value="0">--Select State--</option>
+                          <option value="1">Madhya Pradesh</option>
+                          <option value="2">Utter Pradesh</option>
+                          <option value="3">Panjab</option>
+                          <option value="4">Gujrat</option>
+                        <option value="5">Haryana</option>
+
+                    </select>
+                </div>
+                <div class="right">
+                    <label>City</label> <br />
+                    <select class="input">
+                        <option value="0">--Select City--</option>
+                        <option value="1">Bhopal</option>
+                        <option value="2">Lakhnow</option>
+                        <option value="3">Chandigarh</option>
+                        <option value="4">Gandhinagar</option>
+                        <option value="5">Gurugram</option>
+                    </select>
+            </div>
+        </div>
+
+
+        <div class="row1">
+            <div class="left1">
+            <label >Address: </label>
+            <textarea class="input" rows="2" placeholder="Enter Address"></textarea>
+        </div>
+    </div>
+
+
+    <div class="row">
+                <div class="left">
+                        <label >Gender</label> <br />
+                        <input type="radio" name="Gender" />
+                        <label for="Male">Male</label>
+                        <input type="radio"  name="Gender"/>
+                        <label for="Female">Female</label>
+                    </div>
+                <div class="right">
+                    <label>Education</label> <br />
+                    <input type="checkbox" maxlength="10" placeholder="Enter 10 Digit" />
+                    <label>UG</label>
+                    <input type="checkbox" maxlength="10" placeholder="Enter 10 Digit" />
+                    <label>PG</label>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="left">
+               <button class="btn">Submit</button>
+               <button class="btn1">Clear</button>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</fieldset>
+
+
+    </div>
+    <div class="container1">
+        <div class="table-box">
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Father's Name</th>
+                    <th>Mother's Name</th>
+                    <th>DOB</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>Mobile No.</th>
+                    <th>State</th>
+                    <th>City</th>
+                    <th>Gender</th>
+                    <th>Education</th>
+                    <th>Edit/Delete</th>
+
+                </tr>
+                <tr>
+                    <td>Aman</td>
+                    <td>Das</td>
+                    <td>Chaman Das</td>
+                    <td>Sulekha Das</td>
+                    <td>12-30-2022</td>
+                    <td>21</td>
+                    <td>Aman@gmail.com</td>
+                    <td>9865322154</td>
+                    <td>Gujrat</td>
+                    <td>Bhopal</td>
+                    <td>Male</td>
+                    <td>UG</td>
+
+                    <td>
+                        <div>
+                            <button class="button1">Edit</button>
+                            <br />
+                            <button class="button2">Delete</button>
+                        </div>
+                    </td>
+                    <tr>
+                        <td>Chaman</td>
+                        <td>Gupta</td>
+                        <td>Raman Gupta</td>
+                        <td>Shayama Gupta</td>
+                        <td>16-19-2021</td>
+                        <td>23</td>
+                        <td>Chaman@gmail.com</td>
+                        <td>6265458754</td>
+                        <td>Rajsthan</td>
+                        <td>Indore</td>
+                        <td>Male</td>
+                        <td>UG</td>
+                        <td>
+                            <div>
+                                <button class="button1">Edit</button>
+                                <br />
+                                <button class="button2" >Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Hina</td>
+                        <td>Pandit</td>
+                        <td>Anuj Pandit</td>
+                        <td>Reena Pandit</td>
+                        <td>01-02-2018</td>
+                        <td>15</td>
+                        <td>Hina@gmail.com</td>
+                        <td>9264587549</td>
+                        <td>Madhya Pradesh</td>
+                        <td>Ujjain</td>
+                        <td>Female</td>
+                        <td>UG</td>
+                        <td>
+                            <div >
+                                <button  class="button1">Edit</button>
+                                <br />
+                                <button class="button2" >Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Sana</td>
+                        <td>Tiwari</td>
+                        <td>Rakesh Tiwari</td>
+                        <td>Seema Tiwari</td>
+                        <td>01-14-2022</td>
+                        <td>21</td>
+                        <td>Sana@gmail.com</td>
+                        <td>785963214</td>
+                        <td>Panjab</td>
+                        <td>Indore</td>
+                        <td>Female</td>
+                        <td>PG</td>
+                        <td>
+                            <div>
+                                <button  class="button1">Edit</button>
+                                <br />
+                                <button class="button2" >Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Fana</td>
+                        <td>Makbul</td>
+                        <td>Abdul Makbul</td>
+                        <td>Shayena Makbul</td>
+                        <td>07-12-2015</td>
+                        <td>24</td>
+                        <td>Sfana@gmail.com</td>
+                        <td>9568596859</td>
+                        <td>Rajsthan</td>
+                        <td>Guna</td>
+                        <td>Female</td>
+                        <td>UG</td>
+                        <td>
+                            <div>
+                                <button class="button1">Edit</button>
+                                <br />
+                                <button class="button2" >Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Aman</td>
+                        <td>Das</td>
+                        <td>Suresh Das</td>
+                        <td>Sunita Das</td>
+                        <td>12-30-2022</td>
+                        <td>21</td>
+                        <td>Aman@gmail.com</td>
+                        <td>9865322154</td>
+                        <td>Rajsthan</td>
+                        <td>Guna</td>
+                        <td>Male</td>
+                        <td>UG</td>
+                        <td>
+                            <div>
+                                <button class="button1">Edit</button>
+                                <br />
+                                <button class="button2" >Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
